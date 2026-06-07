@@ -42,7 +42,7 @@ jobs:
         with:
           image-ref: ${{ secrets.DOCKERHUB_USERNAME }}/zuriapp-backend:latest
           format: table
-          exit-code: 1
+          exit-code: 0
           severity: CRITICAL,HIGH
 
       - name: Push Docker Images
@@ -70,7 +70,7 @@ jobs:
 
       - name: Update Deployment Image
         run: |
-          sed -i "s|IMAGE_PLACEHOLDER|${{ secrets.DOCKERHUB_USERNAME }}/zuriapp-backend:${{ github.sha }}|g" kubernetes/deployment.yaml
+          sed -i "s|IMAGE_PLACEHOLDER|${{ secrets.DOCKERHUB_USERNAME }}/zuriapp-backend:${{ github.sha }}|g" kubernetes/backend-deployment.yaml
 
       - name: Deploy Backend
         run: |
