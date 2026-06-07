@@ -21,7 +21,7 @@ spec:
       containers:
       - name: backend
 
-        image: tomidedev/zuriapp-backend:v1
+        image: IMAGE_PLACEHOLDER
 
         imagePullPolicy: Always
 
