@@ -59,7 +59,7 @@ jobs:
         run: |
           mkdir -p ~/.kube
           cat <<EOF > ~/.kube/config
-          ${{ secrets.KUBE_CONFIG_DATA }}
+          ${{ secrets.KUBECONFIG_DATA }}
           EOF
           chmod 600 ~/.kube/config
 
